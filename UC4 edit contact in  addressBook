@@ -61,3 +61,17 @@ mysql> select * from addressbook;
 |  1 | mrunal    | Bhoir    | mumbai  | thane | maharashtra | 473484  | 9898989     | mrunalbhoir100@hmal.co |
 +----+-----------+----------+---------+-------+-------------+---------+-------------+------------------------+
 1 row in set (0.00 sec)
+
+mysql> update addressbook
+    -> set Firstname='kunal',LastName='patil',Address='kashmir',City='srinagar',State='jammu'
+    -> where id=2;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from addressbook;
++----+-----------+----------+---------+----------+-------------+----------+-------------+------------------------+
+| id | FirstName | LastName | Address | City     | State       | ZipCode  | PhoneNumber | Email                  |
++----+-----------+----------+---------+----------+-------------+----------+-------------+------------------------+
+|  1 | mrunal    | Bhoir    | mumbai  | thane    | maharashtra | 473484   | 9898989     | mrunalbhoir100@hmal.co |
+|  2 | kunal     | patil    | kashmir | srinagar | jammu       | 42173484 | 9898980099  | mrur100@hmal.co        |
++----+-----------+----------+---------+----------+-------------+----------+-------------+------------------------+
+2 rows in set (0.00 sec)	
