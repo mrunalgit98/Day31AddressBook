@@ -121,3 +121,55 @@ mysql> select * from addressbook order by FirstName asc;
 |  1 | mrunal    | Bhoir    | mumbai  | thane | maharashtra | 473484   | 9898989     | mrunalbhoir100@hmal.co |
 +----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+
 3 rows in set (0.00 sec)
+
+mysql> select * from addressbook;
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+------+
+| id | FirstName | LastName | Address | City  | State       | ZipCode  | PhoneNumber | Email                  | type |
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+------+
+|  1 | mrunal    | Bhoir    | mumbai  | thane | maharashtra | 473484   | 9898989     | mrunalbhoir100@hmal.co | NULL |
+|  3 | kunal     | patil    | pune    | thane | maharashtra | 42173484 | 9898980099  | mrur100@hmal.co        | NULL |
+|  4 | akash     | Bhoir    | mumbai  | thane | maharashtra | 473484   | 9898989     | mrunalbhoir100@hmal.co | NULL |
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+------+
+3 rows in set (0.00 sec)
+
+mysql> update addressbook set type='friend' where id=4;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+--------+
+| id | FirstName | LastName | Address | City  | State       | ZipCode  | PhoneNumber | Email                  | type   |
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+--------+
+|  1 | mrunal    | Bhoir    | mumbai  | thane | maharashtra | 473484   | 9898989     | mrunalbhoir100@hmal.co | NULL   |
+|  3 | kunal     | patil    | pune    | thane | maharashtra | 42173484 | 9898980099  | mrur100@hmal.co        | NULL   |
+|  4 | akash     | Bhoir    | mumbai  | thane | maharashtra | 473484   | 9898989     | mrunalbhoir100@hmal.co | friend |
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> update addressbook set type='family' where id=1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+--------+
+| id | FirstName | LastName | Address | City  | State       | ZipCode  | PhoneNumber | Email                  | type   |
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+--------+
+|  1 | mrunal    | Bhoir    | mumbai  | thane | maharashtra | 473484   | 9898989     | mrunalbhoir100@hmal.co | family |
+|  3 | kunal     | patil    | pune    | thane | maharashtra | 42173484 | 9898980099  | mrur100@hmal.co        | NULL   |
+|  4 | akash     | Bhoir    | mumbai  | thane | maharashtra | 473484   | 9898989     | mrunalbhoir100@hmal.co | friend |
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> update addressbook set type='bro' where id=3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+--------+
+| id | FirstName | LastName | Address | City  | State       | ZipCode  | PhoneNumber | Email                  | type   |
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+--------+
+|  1 | mrunal    | Bhoir    | mumbai  | thane | maharashtra | 473484   | 9898989     | mrunalbhoir100@hmal.co | family |
+|  3 | kunal     | patil    | pune    | thane | maharashtra | 42173484 | 9898980099  | mrur100@hmal.co        | bro    |
+|  4 | akash     | Bhoir    | mumbai  | thane | maharashtra | 473484   | 9898989     | mrunalbhoir100@hmal.co | friend |
++----+-----------+----------+---------+-------+-------------+----------+-------------+------------------------+--------+
+3 rows in set (0.00 sec)
