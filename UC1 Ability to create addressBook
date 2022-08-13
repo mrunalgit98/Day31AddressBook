@@ -1,0 +1,63 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| employeedb         |
+| employeeedb        |
+| information_schema |
+| mysql              |
+| payrolls_service   |
+| performance_schema |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> create database addressbookservice;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| addressbookservice |
+| employeedb         |
+| employeeedb        |
+| information_schema |
+| mysql              |
+| payrolls_service   |
+| performance_schema |
+| sys                |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> use addressbookservice;
+Database changed
+mysql> create table addressbook(id int not null auto_increment,FirstName varchar(50) not null,LastName varchar(60) not null,Address varchar(50) not null,City varchar(63)not null,State varchar(70) not null,ZipCode varchar(20) not null,PhoneNumber varchar(30) not null,Email varchar(50) not null,Primary key(id));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc addressbook;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | int         | NO   | PRI | NULL    | auto_increment |
+| FirstName   | varchar(50) | NO   |     | NULL    |                |
+| LastName    | varchar(60) | NO   |     | NULL    |                |
+| Address     | varchar(50) | NO   |     | NULL    |                |
+| City        | varchar(63) | NO   |     | NULL    |                |
+| State       | varchar(70) | NO   |     | NULL    |                |
+| ZipCode     | varchar(20) | NO   |     | NULL    |                |
+| PhoneNumber | varchar(30) | NO   |     | NULL    |                |
+| Email       | varchar(50) | NO   |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+9 rows in set (0.00 sec)
+
+mysql> insert into addressbook (FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email) values ('mrunal', 'Bhoir', 'mumbai', 'thane', 'maharashtra', '473484', '9898989', 'mrunalbhoir100@hmal.co');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from addressbook;
++----+-----------+----------+---------+-------+-------------+---------+-------------+------------------------+
+| id | FirstName | LastName | Address | City  | State       | ZipCode | PhoneNumber | Email                  |
++----+-----------+----------+---------+-------+-------------+---------+-------------+------------------------+
+|  1 | mrunal    | Bhoir    | mumbai  | thane | maharashtra | 473484  | 9898989     | mrunalbhoir100@hmal.co |
++----+-----------+----------+---------+-------+-------------+---------+-------------+------------------------+
+1 row in set (0.00 sec)
