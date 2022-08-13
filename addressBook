@@ -103,3 +103,11 @@ mysql>  select City,State from addressbook where FirstName='mrunal';
 | thane | maharashtra |
 +-------+-------------+
 1 row in set (0.00 sec)
+
+mysql> select Count(*) from addressbook where City='thane';
++----------+
+| Count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.01 sec)
